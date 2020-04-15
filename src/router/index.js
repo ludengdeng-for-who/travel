@@ -19,6 +19,10 @@ Vue.use(VueRouter)
   {
     path:'/mine',
     component:()=> import ("@/views/mine/Mine")
+  },
+  {
+    path:'/login',
+    component:()=> import ("@/views/login/Login")
   }
 ]
 

@@ -9,7 +9,7 @@
         <img src="//s.qunarzz.com/ordercenter_mobile/images/order_login.png" alt="">
         <div class="none-info">你好没有本地订单</div>
         <div class="none-info">快登录查看本地订单吧</div>
-        <div class="login">登录</div>
+        <div class="login" @click="login">登录</div>
       </div>
       <NavBar />
   </div>
@@ -21,6 +21,13 @@ export default {
  name:"order",
  components:{
      NavBar
+ },
+ methods:{
+   login(){
+     console.log(1);
+     
+     this.$router.push('/login');
+   }
  }
 }
 </script>
@@ -37,6 +44,7 @@ export default {
     display: flex;
     padding: 0.4rem /* 10/25 */ 0.8rem /* 20/25 */;
     justify-content:space-between;
+    align-items: center;
     .search{
       font-size: 0.64rem /* 16/25 */
     }
