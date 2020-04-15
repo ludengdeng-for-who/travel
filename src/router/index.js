@@ -9,6 +9,10 @@ Vue.use(VueRouter)
     component:()=> import ("@/views/home/Home")
   },
   {
+    path:'/detail',
+    component:()=> import ("@/views/detail/Detail")
+  },
+  {
     path:'/orders',
     component:()=> import ("@/views/order/Order")
   },

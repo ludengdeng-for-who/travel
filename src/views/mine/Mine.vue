@@ -5,7 +5,7 @@
         src="https://s.qunarzz.com/usercenter_mobile/images/my/mybgnew-20161111.jpg"
         alt=""
       />
-      <div class="user">
+      <div class="user" @click="login">
         <div class="img-out">
           <img
             src="https://source.qunarzz.com/usercenter/touch/avatar.png"
@@ -94,7 +94,7 @@
             <i class="icon iconfont icon-xinxi"></i>
           </template>
           <template v-slot:center>
-            <div>意见反馈y</div>
+            <div>意见反馈</div>
           </template>
           <template v-slot:right>
             <i class="icon iconfont icon-qianjin"></i>
@@ -115,25 +115,28 @@
         </Item>
       </div>
     </div>
+    <NavBar />
   </div>
 </template>
 
 <script>
 import Item from "./components/Item";
+import NavBar from '@/components/Navbar'
 export default {
   components: {
-    Item
+    Item,
+    NavBar
   },
   data() {
     return {
       list: [
         {
-          money: 999999999,
+          money: 888,
           id: 1,
           title: "账户余额"
         },
         {
-          money: 13215,
+          money: 123,
           id: 2,
           title: "星券"
         },
@@ -144,6 +147,11 @@ export default {
         }
       ]
     };
+  },
+  methods:{
+    login(){
+      
+    }
   }
 };
 </script>

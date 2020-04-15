@@ -6,6 +6,7 @@
     <Recommend />
     <Cheap />
     <Now />
+    <NavBar />
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import Icons from './components/Icons'
 import Recommend from './components/Recommend'
 import Cheap from './components/Cheap'
 import Now from './components/Now'
+import NavBar from '@/components/Navbar'
 export default {
     name:"home",
     components:{
@@ -24,7 +26,8 @@ export default {
         Icons,
         Recommend,
         Cheap,
-        Now
+        Now,
+        NavBar
     }
 }
 </script>
