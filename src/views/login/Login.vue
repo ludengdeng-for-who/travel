@@ -4,7 +4,7 @@
       <div class="top-bar">
         <div class="icon iconfont icon-houtui1" @click="back"></div>
         <div>登录</div>
-        <div>注册</div>
+        <div @click="register">注册</div>
       </div>
 
       <div class="type">
@@ -33,45 +33,63 @@
           <div class="yanzheng">验证码</div>
         </template>
       </Item>
-      <Login />
+      <div>
+        <LoginButton />
+      </div>
     </div>
     <div class="info-2" v-show="!isShow">
       <div class="info">
-      <Item>
-        <template v-slot:left>
-          <div>账号</div>
-        </template>
-        <template v-slot:center>
-          <input class="input" type="text" placeholder="输入账号" />
-        </template>
-        <template></template>
-      </Item>
-      <Item>
-        <template v-slot:left>
-          <div>密码</div>
-        </template>
-        <template v-slot:center>
-          <input class="input" type="text" placeholder="输入密码" />
-        </template>
-      </Item>
-      <Login />
-    </div>
+        <Item>
+          <template v-slot:left>
+            <div>账号</div>
+          </template>
+          <template v-slot:center>
+            <input
+              class="input"
+              type="text"
+              v-model="user.name"
+              placeholder="输入账号"
+            />
+          </template>
+          <template></template>
+        </Item>
+        <Item>
+          <template v-slot:left>
+            <div>密码</div>
+          </template>
+          <template v-slot:center>
+            <input
+              class="input"
+              type="text"
+              v-model="user.password"
+              placeholder="输入密码"
+            />
+          </template>
+        </Item>
+        <div @click="goLogin">
+          <LoginButton />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import Item from "./components/LoginItem";
-import Login from "./components/LoginButton";
+import LoginButton from "./components/LoginButton";
 export default {
   components: {
     Item,
-    Login,
+    LoginButton,
   },
   name: "login",
   data() {
     return {
       isShow: true,
+      user: {
+        name: "",
+        password: "",
+      },
     };
   },
   methods: {
@@ -80,6 +98,21 @@ export default {
     },
     back() {
       this.$router.go(-1);
+    },
+    register() {
+      this.$router.push("/register");
+    },
+    goLogin() {
+      // console.log(this.user);
+      let {name,password } = this.user;
+      const res = localStorage.getItem("userinfo");
+      res = JSON.parse(res);
+      // if(name === res.name && password === res.password){
+      //   alert("登录成功")
+      // }else {
+      //   alert("登录失败")
+
+      // }
     },
   },
 };

@@ -1,6 +1,6 @@
 <template>
     <div class="home-header">
-        <div class="header-left icon iconfont icon-houtui"></div>
+        <!-- <div class="header-left icon iconfont icon-houtui"></div> -->
         <div class="header-input"><i class="icon  iconfont icon-icon117"></i> 请输入城市/景点/主题</div>
         <div class="header-right">城市</div><i class="icon  iconfont icon-down-fill1-xs"></i>
     </div>
@@ -15,6 +15,7 @@ export default {
 <style lang="less" scoped>
 @import url("~@/assets/css/colors.less");
 .home-header{
+    padding: 0 0 0 0.4rem /* 10/25 */;
     position: sticky;
     top: 0;
     z-index: 999;
