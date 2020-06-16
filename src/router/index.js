@@ -31,6 +31,10 @@ Vue.use(VueRouter)
 {
     path:'/register',
     component:()=> import ("@/views/register/Register")
+  },
+{
+    path:'/register',
+    component:()=> import ("@/views/register/Register")
   }
 ]
 
